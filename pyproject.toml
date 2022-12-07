@@ -6,10 +6,6 @@ authors = ["Jonathan Daly <jonathan.daly@sensynehealth.com>"]
 keywords = ["PDF", "BCP"]
 repository = "https://github.com/draysontechnologies/dhos-pdf-api"
 
-[[tool.poetry.source]]
-name = "sensynehealth"
-url = "https://pypi.fury.io/sensynehealth/"
-
 [tool.poetry.dependencies]
 python = "^3.9,<3.10"
 cachetools = "*"
