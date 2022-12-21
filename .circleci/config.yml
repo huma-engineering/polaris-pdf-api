@@ -18,7 +18,7 @@ jobs:
             sudo apt-get update && sudo apt-get -y install wget xz-utils fontconfig
             postgresql-client openssl build-essential libssl-dev libxrender-dev git-core
             libx11-dev libxext-dev libfontconfig1-dev libfreetype6-dev poppler-utils wkhtmltopdf
-      - run: poetry self update
+      - run: poetry self update --no-ansi
       - run: poetry config http-basic.sensynehealth ${GEMFURY_DOWNLOAD_KEY} ''
       - run:
           name: Set up tox tests
@@ -29,7 +29,7 @@ jobs:
             - v1-poetry-deps-
       - run:
           name: Run tox tests
-          command: tox -e py39
+          command: tox -r -e py39
       - save_cache:
           key: v1-poetry-deps-{{ checksum "poetry.lock" }}
           paths:
